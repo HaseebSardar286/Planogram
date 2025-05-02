@@ -1,0 +1,28 @@
+<div>
+  <h1>Project Name</h1>
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="category()"
+          >Category</a
+        >
+      </li>
+      <li>
+        <a routerLinkActive="active" (click)="planogram()">Planogram</a>
+      </li>
+      <li>
+        <a routerLinkActive="active" (click)="users()">Users</a>
+      </li>
+      <li>
+        <a routerLinkActive="active" (click)="skus()">SKUs</a>
+      </li>
+      <li>
+        <a routerLinkActive="active" (click)="compliance()">Compliance</a>
+      </li>
+    </ul>
+  </nav>
+  <hr />
+</div>

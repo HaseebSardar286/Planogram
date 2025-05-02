@@ -1,0 +1,53 @@
+button {
+  border: 0.5px solid rgb(42, 157, 250);
+  border-radius: 8px;
+  height: 35px;
+  margin: 5px;
+  margin-top: 15px;
+  background-color: white;
+  color: rgb(14, 131, 226);
+  font-size: 14px;
+}
+button:hover {
+  cursor: pointer;
+}
+.button {
+  display: flex;
+  justify-content: end;
+}
+
+.table-header {
+  display: flex;
+  background-color: #f8f8f8;
+  font-weight: 500;
+  font-size: 14px;
+  color: #5e5b5b;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 10px;
+}
+
+.header-cell {
+  padding: 10px;
+  flex: 1;
+  text-align: left;
+}
+
+.header-cell:nth-child(1) {
+  flex: 50px;
+}
+
+.header-cell:nth-child(2) {
+  flex: 2;
+}
+
+.header-cell:nth-child(3) {
+  flex: 2;
+  color: #666;
+}
+.vertical-divider {
+  display: grid;
+  height: 25px;
+  margin-top: 7px;
+  border: 0.3px solid rgb(228, 225, 225);
+}

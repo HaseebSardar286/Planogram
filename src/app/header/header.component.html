@@ -1,0 +1,21 @@
+<div class="header-container">
+  <h1><a routerLink="/dashboard">Planogram</a></h1>
+  <div class="dropdown" (click)="toggleDropdown()">
+    <button class="btn btn-secondary dropdown-toggle" type="button">A</button>
+    <ul class="dropdown-menu" *ngIf="dropdownOpen">
+      <li>
+        <a class="dropdown-item" routerLink=""
+          ><app-user-detail></app-user-detail
+        ></a>
+      </li>
+      <hr />
+      <li>
+        <a class="dropdown-item" (click)="goToChangePassword()"
+          >Change Password</a
+        >
+      </li>
+      <hr />
+      <li><a class="dropdown-item logout" routerLink="/login">Logout</a></li>
+    </ul>
+  </div>
+</div>

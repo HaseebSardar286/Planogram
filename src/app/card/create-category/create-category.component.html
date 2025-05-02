@@ -1,0 +1,41 @@
+<div class="top-container">
+  <div class="container">
+    <form
+      #addCategoryForm="ngForm"
+      (ngSubmit)="addCategory(addCategoryForm.value)"
+    >
+      <div class="button-container">
+        <h2>Add New Category</h2>
+        <div>
+          <button class="close-button" (click)="removeMenu()">x</button>
+        </div>
+      </div>
+      <div class="label-input">
+        <span><span style="color: red">*</span>Name</span>
+        <input
+          class="input"
+          type="text"
+          name="name"
+          placeholder="Enter user name"
+          ngModel
+        />
+      </div>
+
+      <div class="label-input">
+        <span>Description</span>
+        <textarea
+          type="text"
+          name="description"
+          placeholder="Enter description"
+          rows="5"
+          ngModel
+        ></textarea>
+      </div>
+
+      <div class="buttons">
+        <button class="cancelButton" (click)="removeMenu()">Cancel</button>
+        <button class="addUserButton" routerLink="">Add Category</button>
+      </div>
+    </form>
+  </div>
+</div>

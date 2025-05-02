@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="sideBar">
+    <input type="text" name="serchBar" #searchBar placeholder="Search..." />
+  </div>
+  <div>
+    <a routerLink="/dashboard" class="projectCards"
+      ><app-project-card></app-project-card
+    ></a>
+  </div>
+</div>
+<button class="button" (click)="addProject()">+ Add Project</button>

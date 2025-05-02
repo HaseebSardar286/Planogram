@@ -1,0 +1,107 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 3px rgb(230, 227, 227);
+  margin-top: 5%;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  height: 28px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 0.5px solid rgb(233, 233, 233);
+  padding: 3px;
+  padding-left: 8px;
+}
+.input:focus-visible {
+  border: 0.5px solid;
+  border-color: rgb(0, 132, 255);
+}
+span {
+  color: rgb(44, 43, 43);
+  font-size: 13px;
+  margin-top: 14px;
+  margin-left: 5px;
+  margin-bottom: 4px;
+}
+h2 {
+  font-weight: 500;
+  font-size: 16px;
+}
+p {
+  text-align: center;
+  color: rgb(148, 149, 150);
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.addUserButton {
+  border: 0.5px solid rgb(42, 157, 250);
+  border-radius: 8px;
+  height: 35px;
+  margin: 5px;
+  margin-top: 15px;
+  background-color: rgb(14, 131, 226);
+  color: white;
+  font-size: 14px;
+}
+.addUserButton:hover {
+  cursor: pointer;
+}
+.cancelButton {
+  border: 0.5px solid rgb(195, 197, 199);
+  border-radius: 8px;
+  height: 35px;
+  margin: 5px;
+  margin-top: 15px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(121, 121, 121);
+  font-size: 14px;
+}
+.cancelButton:hover {
+  cursor: pointer;
+  color: rgb(14, 131, 226);
+  border-color: rgb(14, 131, 226);
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+}
+.button-container {
+  display: flex;
+  justify-content: end;
+}
+.button-container h2 {
+  margin-right: 55%;
+}
+.close-button {
+  width: 35px;
+  height: auto;
+  font-size: 18px;
+  border: none;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+.close-button:hover {
+  cursor: pointer;
+  background-color: rgb(173, 215, 240);
+  border-radius: 40px;
+}

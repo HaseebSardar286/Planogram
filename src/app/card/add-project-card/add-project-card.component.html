@@ -1,0 +1,56 @@
+<div class="top-container">
+  <div class="container">
+    <form
+      #forgotPasswordForm="ngForm"
+      (ngSubmit)="addProject(forgotPasswordForm.value)"
+    >
+      <h2>Add New Project</h2>
+
+      <input
+        type="file"
+        (change)="onImageSelected($event)"
+        accept="image/*"
+        class="imageSelector"
+      />
+      <div *ngIf="selectedImage">
+        <p>Preview:</p>
+        <img [src]="selectedImage" alt="Preview" width="200" />
+      </div>
+
+      <div class="label-input">
+        <span><span style="color: red">*</span>Name</span>
+        <input
+          class="input"
+          type="email"
+          name="email"
+          placeholder="Enter your new password"
+          ngModel
+        />
+      </div>
+
+      <div class="label-input">
+        <span>Description</span>
+        <input
+          class="input"
+          type=""
+          name="email"
+          placeholder="Confirm your new password"
+          ngModel
+        />
+        <textarea
+          name="description"
+          #description
+          placeholder="Project Description"
+          class="input"
+          rows="5"
+          ngModel
+        ></textarea>
+      </div>
+
+      <div class="buttons">
+        <button class="cancelButton" (click)="cancelAddition()">Cancel</button>
+        <button class="addProjectButton" routerLink="">Add Project</button>
+      </div>
+    </form>
+  </div>
+</div>

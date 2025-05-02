@@ -1,0 +1,62 @@
+<div class="button">
+  <div class="left-controls">
+    <div class="searchBar">
+      <input
+        type="text"
+        name="serchBar"
+        #searchBar
+        placeholder="Search by title"
+      />
+    </div>
+    <div class="dropdown" (click)="toggleDropDown()">
+      <button class="btn btn-secondary" type="button">
+        {{ selectedStatus || "All Status" }}
+      </button>
+      <ul class="dropdown-menu" *ngIf="dropdownOpen">
+        <li>
+          <a class="dropdown-item" (click)="selectStatus('Select All')" selected
+            >Select All</a
+          >
+        </li>
+        <hr class="dropdown-divider" />
+
+        <li>
+          <a class="dropdown-item" (click)="selectStatus('Approved')"
+            >Approved</a
+          >
+        </li>
+        <hr class="dropdown-divider" />
+        <li>
+          <a class="dropdown-item" (click)="selectStatus('Pending')">Pending</a>
+        </li>
+        <hr class="dropdown-divider" />
+        <li>
+          <a class="dropdown-item" (click)="selectStatus('Rejected')"
+            >Rejected</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <button class="add-sku-btn" (click)="addPlanogram()">Add Planogram</button>
+</div>
+
+<div class="table-container">
+  <div class="table-header">
+    <div class="header-cell">Title</div>
+    <hr class="vertical-divider" />
+    <div class="header-cell">Shelves #</div>
+    <hr class="vertical-divider" />
+    <div class="header-cell">Racks #</div>
+    <hr class="vertical-divider" />
+    <div class="header-cell">Rack Height</div>
+    <hr class="vertical-divider" />
+    <div class="header-cell">Rack Width</div>
+    <hr class="vertical-divider" />
+    <div class="header-cell">Approval Status</div>
+    <hr class="vertical-divider" />
+    <div class="header-cell">Actions</div>
+  </div>
+  <hr style="border: 0.3px solid rgb(228, 225, 225)" />
+</div>

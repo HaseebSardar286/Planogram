@@ -1,0 +1,45 @@
+<div class="top-container">
+  <div class="container">
+    <form #loginForm="ngForm" (ngSubmit)="addDetails(loginForm.value)">
+      <h2>Welcome Back!</h2>
+      <p>Please Login to your account</p>
+
+      <div class="label-input">
+        <span><span style="color: red">*</span>Email</span>
+        <input
+          class="input"
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          ngModel
+        />
+      </div>
+
+      <div class="label-input">
+        <span><span style="color: red">*</span>Password</span>
+        <input
+          class="input"
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          ngModel
+        />
+      </div>
+
+      <div class="label-input">
+        <span class="forgotPassword"
+          ><a routerLink="/forgotPassword">Forgot Password?</a></span
+        >
+      </div>
+
+      <div style="display: flex; flex-direction: column">
+        <button class="loginButton">
+          <a routerLink="/dashboard">Login</a>
+        </button>
+        <span class="register"
+          >Don't have an account? <a routerLink="/register">Register</a></span
+        >
+      </div>
+    </form>
+  </div>
+</div>

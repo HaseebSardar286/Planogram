@@ -1,0 +1,98 @@
+<div class="top-container">
+  <div class="container">
+    <form
+      #forgotPasswordForm="ngForm"
+      (ngSubmit)="addProject(forgotPasswordForm.value)"
+    >
+      <h2>Create New Compliance</h2>
+      <div class="label-input">
+        <span class="label"><span style="color: red">*</span>Image</span>
+        <div
+          (click)="fileInput.click()"
+          style="cursor: pointer; width: 100px; font-size: 13px"
+        >
+          <ngx-file-drop
+            dropZoneLabel="Drop or click to upload Image"
+            (onFileDrop)="dropped($event)"
+            [showBrowseBtn]="false"
+          >
+          </ngx-file-drop>
+        </div>
+        <input
+          type="file"
+          style="display: none"
+          #fileInput
+          accept="image/*"
+          (change)="fileBrowseHandler($event)"
+        />
+        <div *ngIf="imagePreviewUrl" class="preview">
+          <img
+            [src]="imagePreviewUrl"
+            alt="Image Preview"
+            style="width: 100px"
+          />
+        </div>
+      </div>
+      <div class="label-input">
+        <span class="label"><span style="color: red">*</span>Planogram</span>
+        <div class="dropdown" (click)="toggleDropDown()">
+          <button class="btn btn-secondary" type="button">
+            {{ selectedStatus || "Select a planogram" }}
+          </button>
+          <ul class="dropdown-menu" *ngIf="dropdownOpen">
+            <hr class="dropdown-divider" />
+
+            <li>
+              <a class="dropdown-item" (click)="selectStatus('Nuterition')"
+                >Nuterition</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="label-input">
+        <span class="label"><span style="color: red">*</span>Category</span>
+        <div class="dropdown-category" (click)="toggleDropDownCategory()">
+          <button class="btn btn-secondary-category" type="button">
+            {{ selectedStatusCategory || "Select a category" }}
+          </button>
+          <ul class="dropdown-menu-category" *ngIf="dropdownOpenCategory">
+            <hr class="dropdown-divider-category" />
+
+            <li>
+              <a
+                class="dropdown-item-category"
+                (click)="selectStatusCategory('Nescafe RTD')"
+                >Nescafe RTD</a
+              >
+            </li>
+            <hr class="dropdown-divider-category" />
+            <li>
+              <a
+                class="dropdown-item-category"
+                (click)="selectStatusCategory('Milo')"
+                >Milo</a
+              >
+            </li>
+            <hr class="dropdown-divider-category" />
+            <li>
+              <a
+                class="dropdown-item-category"
+                (click)="selectStatusCategory('Condensed Milk')"
+                >Condensed Milk</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="cancelButton" (click)="cancelAddition()">Cancel</button>
+        <button class="addProjectButton" routerLink="">
+          Create new Compilance
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

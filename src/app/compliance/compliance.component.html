@@ -1,0 +1,60 @@
+<div class="button">
+  <div class="left-controls">
+    <div class="searchBar">
+      <input
+        type="text"
+        name="serchBar"
+        #searchBar
+        placeholder="Search by category"
+      />
+    </div>
+    <div class="dropdown" (click)="toggleDropDown()">
+      <button class="btn btn-secondary" type="button">
+        {{ selectedStatus || "Filter by planogram" }}
+      </button>
+      <ul class="dropdown-menu" *ngIf="dropdownOpen">
+        <hr class="dropdown-divider" />
+
+        <li>
+          <a class="dropdown-item" (click)="selectStatus('Nuterition')"
+            >Nuterition</a
+          >
+        </li>
+        <hr class="dropdown-divider" />
+        <li>
+          <a class="dropdown-item" (click)="selectStatus('Milo')">Milo</a>
+        </li>
+        <hr class="dropdown-divider" />
+        <li>
+          <a class="dropdown-item" (click)="selectStatus('Condensed Milk')"
+            >Condensed Milk</a
+          >
+        </li>
+      </ul>
+    </div>
+    <mat-form-field appearance="fill" class="date-picker">
+      <mat-label>Date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" (ngModel)="(startDate)" />
+        <input matEndDate placeholder="End date" (ngModel)="(endDate)" />
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+
+  <button class="add-sku-btn" (click)="createCompliance()">
+    Create Compliance
+  </button>
+</div>
+
+<div class="table-container">
+  <div class="table-header">
+    <div class="header-cell">Category Name</div>
+    <hr class="vertical-divider" />
+    <div class="header-cell">Created at</div>
+    <hr class="vertical-divider" />
+    <div class="header-cell">Actions</div>
+  </div>
+  <hr style="border: 0.3px solid rgb(228, 225, 225)" />
+</div>

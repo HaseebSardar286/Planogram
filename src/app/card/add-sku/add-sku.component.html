@@ -1,0 +1,190 @@
+<div class="top-container">
+  <div class="container">
+    <form
+      #forgotPasswordForm="ngForm"
+      (ngSubmit)="addProject(forgotPasswordForm.value)"
+    >
+      <h2>Add New Product</h2>
+      <div class="label-input">
+        <div style="display: flex">
+          <span class="label"
+            ><span style="color: red">*</span>Front Image</span
+          >
+          <span class="label">Back Image</span>
+          <span class="label">Side Image</span>
+        </div>
+        <div style="display: flex">
+          <div
+            (click)="fileInput.click()"
+            style="cursor: pointer; width: 100px; font-size: 13px"
+            class="images"
+          >
+            <ngx-file-drop
+              dropZoneLabel="Drop or click to upload Image"
+              (onFileDrop)="dropped($event)"
+              [showBrowseBtn]="false"
+            >
+            </ngx-file-drop>
+          </div>
+          <input
+            type="file"
+            style="display: none"
+            #fileInput
+            accept="image/*"
+            (change)="fileBrowseHandler($event)"
+          />
+
+          <div
+            (click)="fileInput1.click()"
+            style="cursor: pointer; width: 100px; font-size: 13px"
+            class="images"
+          >
+            <ngx-file-drop
+              dropZoneLabel="Drop or click to upload Image"
+              (onFileDrop)="dropped1($event)"
+              [showBrowseBtn]="false"
+            >
+            </ngx-file-drop>
+          </div>
+          <input
+            type="file"
+            style="display: none"
+            #fileInput1
+            accept="image/*"
+            (change)="fileBrowseHandler1($event)"
+          />
+
+          <div
+            (click)="fileInput2.click()"
+            style="cursor: pointer; width: 100px; font-size: 13px"
+            class="images"
+          >
+            <ngx-file-drop
+              dropZoneLabel="Drop or click to upload Image"
+              (onFileDrop)="dropped2($event)"
+              [showBrowseBtn]="false"
+            >
+            </ngx-file-drop>
+          </div>
+          <input
+            type="file"
+            style="display: none"
+            #fileInput2
+            accept="image/*"
+            (change)="fileBrowseHandler2($event)"
+          />
+        </div>
+
+        <div class="imagePreview">
+          <div *ngIf="imagePreviewUrl" class="images">
+            <img
+              [src]="imagePreviewUrl"
+              alt="Image Preview"
+              style="width: 100px"
+            />
+          </div>
+          <div *ngIf="imagePreviewUrl1" class="images">
+            <img
+              [src]="imagePreviewUrl1"
+              alt="Image Preview"
+              style="width: 100px"
+            />
+          </div>
+          <div *ngIf="imagePreviewUrl2" class="images">
+            <img
+              [src]="imagePreviewUrl2"
+              alt="Image Preview"
+              style="width: 100px"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="label-input">
+        <span><span style="color: red">*</span>Name</span>
+        <input
+          class="input"
+          type="text"
+          name="name"
+          placeholder="Enter user name"
+          ngModel
+        />
+      </div>
+
+      <div class="label-input">
+        <span><span style="color: red">*</span>Product</span>
+        <div class="dropdown-category" (click)="toggleDropDownCategory()">
+          <button class="btn btn-secondary-category" type="button">
+            {{ selectedStatusCategory || "Select a Product Category" }}
+          </button>
+          <ul class="dropdown-menu-category" *ngIf="dropdownOpenCategory">
+            <hr class="dropdown-divider-category" />
+
+            <li>
+              <a
+                class="dropdown-item-category"
+                (click)="selectStatusCategory('Nuterition')"
+                >Nuterition</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="label-input">
+        <span><span style="color: red">*</span>Sku Id</span>
+        <input
+          class="input"
+          type="text"
+          name="name"
+          placeholder="Enter user name"
+          ngModel
+        />
+      </div>
+      <div class="label-input">
+        <span>Description</span>
+        <textarea
+          type="text"
+          name="description"
+          placeholder="Enter description"
+          rows="5"
+          ngModel
+        ></textarea>
+      </div>
+
+      <div class="label-input">
+        <span><span style="color: red">*</span>Sku Id</span>
+        <div class="dropdown" (click)="toggleDropDown()">
+          <button class="btn btn-secondary" type="button">
+            {{ selectedStatus || "cm" }}
+          </button>
+          <ul class="dropdown-menu" *ngIf="dropdownOpen">
+            <li>
+              <a class="dropdown-item" (click)="selectStatus('cm')" selected
+                >cm</a
+              >
+            </li>
+            <hr class="dropdown-divider" />
+            <li>
+              <a class="dropdown-item" (click)="selectStatus('in')">in</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display: flex">
+        <span class="label"><span style="color: red">*</span>Width</span>
+        <span class="label"><span style="color: red">*</span>Height</span>
+        <span class="label"><span style="color: red">*</span>Depth</span>
+      </div>
+      <div style="display: flex">
+        <input type="number" class="input" />
+        <input type="number" class="input" />
+        <input type="number" class="input" />
+      </div>
+      <div class="buttons">
+        <button class="cancelButton" (click)="cancelAddition()">Cancel</button>
+        <button class="addProjectButton" routerLink="">Add New SKU</button>
+      </div>
+    </form>
+  </div>
+</div>

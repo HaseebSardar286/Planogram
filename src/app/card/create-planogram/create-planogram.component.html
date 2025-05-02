@@ -1,0 +1,58 @@
+<div class="top-container">
+  <div class="container">
+    <form
+      #addPlanogramForm="ngForm"
+      (ngSubmit)="addPlanogram(addPlanogramForm.value)"
+    >
+      <div class="button-container">
+        <h2>Create New Planogram</h2>
+        <div>
+          <button class="close-button" (click)="removeMenu()">x</button>
+        </div>
+      </div>
+      <div class="label-input">
+        <span><span style="color: red">*</span>Title</span>
+        <input
+          class="input"
+          type="text"
+          name="name"
+          placeholder="Enter user name"
+          ngModel
+        />
+      </div>
+
+      <div class="label-input">
+        <span><span style="color: red">*</span>Rack Width</span>
+        <div class="rack">
+          <input
+            type="number"
+            name="rackWidth"
+            placeholder="100"
+            ngModel
+            class="rack-width"
+          />
+          <div class="dropdown" (click)="toggleDropDown()">
+            <button class="btn btn-secondary" type="button">
+              {{ selectedStatus || "cm" }}
+            </button>
+            <ul class="dropdown-menu" *ngIf="dropdownOpen">
+              <li>
+                <a class="dropdown-item" (click)="selectStatus('cm')" selected
+                  >cm</a
+                >
+              </li>
+              <hr class="dropdown-divider" />
+              <li>
+                <a class="dropdown-item" (click)="selectStatus('in')">in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr class="divider" />
+      <div class="buttons">
+        <button class="addUserButton" routerLink="">Add Planogram</button>
+      </div>
+    </form>
+  </div>
+</div>

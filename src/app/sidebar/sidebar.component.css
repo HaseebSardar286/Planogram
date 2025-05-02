@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+  height: 83vh;
+  border: none;
+}
+.sideBar {
+  display: flex;
+  justify-content: center;
+}
+input {
+  width: 85%;
+  border: 0.5px solid rgb(197, 197, 197);
+  height: 25px;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 3px;
+  padding-left: 10px;
+}
+
+.button {
+  width: 96%;
+  height: 35px;
+  border: 0.5px solid rgb(199, 198, 198);
+  font-size: 14px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.button:hover {
+  color: rgb(20, 180, 255);
+  cursor: pointer;
+  border-color: rgb(20, 180, 255);
+}
+a {
+  text-decoration: none;
+}
+
+.projectCards {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+.projectCards:hover {
+  border-color: rgb(20, 180, 255);
+}

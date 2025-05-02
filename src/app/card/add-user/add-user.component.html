@@ -1,0 +1,49 @@
+<div class="top-container">
+  <div class="container">
+    <form #addUserForm="ngForm" (ngSubmit)="addUser(addUserForm.value)">
+      <div class="button-container">
+        <h2>Add New User</h2>
+        <div>
+          <button class="close-button" (click)="removeMenu()">x</button>
+        </div>
+      </div>
+      <div class="label-input">
+        <span><span style="color: red">*</span>Name</span>
+        <input
+          class="input"
+          type="text"
+          name="name"
+          placeholder="Enter user name"
+          ngModel
+        />
+      </div>
+
+      <div class="label-input">
+        <span><span style="color: red">*</span>Email</span>
+        <input
+          class="input"
+          type="email"
+          name="email"
+          placeholder="Enter user email"
+          ngModel
+        />
+      </div>
+
+      <div class="label-input">
+        <span><span style="color: red">*</span>User Role</span>
+        <input
+          class="input"
+          type="text"
+          name="role"
+          placeholder="Enter user role"
+          ngModel
+        />
+      </div>
+
+      <div class="buttons">
+        <button class="cancelButton" routerLink="">Cancel</button>
+        <button class="addUserButton" routerLink="">Add User</button>
+      </div>
+    </form>
+  </div>
+</div>

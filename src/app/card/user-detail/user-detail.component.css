@@ -1,0 +1,19 @@
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: rgb(10, 86, 158);
+  margin-right: 10px;
+  align-self: center;
+}
+.card {
+  display: flex;
+}
+.name {
+  color: rgb(107, 107, 107);
+  margin-bottom: 3px;
+  margin-top: 2px;
+}
+.email {
+  color: rgb(182, 182, 182);
+}
