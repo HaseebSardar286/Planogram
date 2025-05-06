@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { loginUser } from '../interface/loginUser';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +11,22 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  userLoginDetails = {};
-  addDetails(values: any) {
-    console.log(values);
-    this.userLoginDetails = values;
+  loginUserDetails: loginUser = {
+    email: '',
+    password: '',
+  };
+  constructor(private auth: AuthService, private router: Router) {}
+  ngOnInit() {}
+  loginUser() {
+    this.auth.loginUser(this.loginUserDetails).subscribe({
+      next: (res) => {
+        console.log('Login successfull', res);
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['/dashboard']);
+      },
+      error: (err) => {
+        console.log('Login Failed', err);
+      },
+    });
   }
 }

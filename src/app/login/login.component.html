@@ -1,6 +1,6 @@
 <div class="top-container">
   <div class="container">
-    <form #loginForm="ngForm" (ngSubmit)="addDetails(loginForm.value)">
+    <form #loginForm="ngForm" (ngSubmit)="loginUser()">
       <h2>Welcome Back!</h2>
       <p>Please Login to your account</p>
 
@@ -11,7 +11,7 @@
           type="email"
           name="email"
           placeholder="Enter your email"
-          ngModel
+          [(ngModel)]="loginUserDetails.email"
         />
       </div>
 
@@ -22,7 +22,7 @@
           type="password"
           name="password"
           placeholder="Enter your password"
-          ngModel
+          [(ngModel)]="loginUserDetails.password"
         />
       </div>
 
@@ -33,9 +33,7 @@
       </div>
 
       <div style="display: flex; flex-direction: column">
-        <button class="loginButton">
-          <a routerLink="/dashboard">Login</a>
-        </button>
+        <button class="loginButton">Login</button>
         <span class="register"
           >Don't have an account? <a routerLink="/register">Register</a></span
         >

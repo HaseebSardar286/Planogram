@@ -1,6 +1,15 @@
+@for (project of projectDetails; track project.id) {
 <div class="card">
-  <img src="" alt="" />
+  <div class="avatar">
+    {{ project.name.charAt(0).toUpperCase() }}
+  </div>
   <div>
-    <p class="name">Project Name</p>
+    <p class="name" (click)="selectProject(project)">{{ project.name }}</p>
+    <p class="name">{{ project.description }}</p>
+  </div>
+  <button (click)="deleteProject(project.id)">Delete</button>
+  <div *ngIf="!projectDetails">
+    <p>No project data available.</p>
   </div>
 </div>
+}

@@ -1,45 +1,43 @@
 <div class="top-container">
   <div class="container">
     <form
-      #forgotPasswordForm="ngForm"
-      (ngSubmit)="addProject(forgotPasswordForm.value)"
+      #addProjectDetails="ngForm"
+      (ngSubmit)="addProject(addProjectDetails.value)"
     >
       <h2>Add New Project</h2>
 
-      <input
-        type="file"
-        (change)="onImageSelected($event)"
-        accept="image/*"
-        class="imageSelector"
-      />
-      <div *ngIf="selectedImage">
+      <div class="label-input">
+        <span>Upload Image</span>
+        <input
+          type="file"
+          (change)="onImageSelected($event)"
+          accept="image/*"
+          class="imageSelector"
+          name="image"
+        />
+      </div>
+
+      <div *ngIf="selectedImage" class="image-preview">
         <p>Preview:</p>
         <img [src]="selectedImage" alt="Preview" width="200" />
       </div>
 
       <div class="label-input">
-        <span><span style="color: red">*</span>Name</span>
+        <span><span style="color: red">*</span>Project Name</span>
         <input
           class="input"
-          type="email"
-          name="email"
-          placeholder="Enter your new password"
+          type="text"
+          name="name"
+          required
+          placeholder="Enter project name"
           ngModel
         />
       </div>
 
       <div class="label-input">
         <span>Description</span>
-        <input
-          class="input"
-          type=""
-          name="email"
-          placeholder="Confirm your new password"
-          ngModel
-        />
         <textarea
           name="description"
-          #description
           placeholder="Project Description"
           class="input"
           rows="5"
@@ -48,8 +46,10 @@
       </div>
 
       <div class="buttons">
-        <button class="cancelButton" (click)="cancelAddition()">Cancel</button>
-        <button class="addProjectButton" routerLink="">Add Project</button>
+        <button type="button" class="cancelButton" (click)="cancelAddition()">
+          Cancel
+        </button>
+        <button type="submit" class="addProjectButton">Add Project</button>
       </div>
     </form>
   </div>

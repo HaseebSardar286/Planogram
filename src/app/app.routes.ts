@@ -15,6 +15,7 @@ import { AddSKUComponent } from './card/add-sku/add-sku.component';
 import { CreateCategoryComponent } from './card/create-category/create-category.component';
 import { CreatePlanogramComponent } from './card/create-planogram/create-planogram.component';
 import { CreateComplianceComponent } from './card/create-compliance/create-compliance.component';
+// import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,6 +24,7 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    // canActivate: [AuthGuard],
     children: [
       { path: 'changePassword', component: ChangePasswordComponent },
       { path: 'addProject', component: AddProjectCardComponent },

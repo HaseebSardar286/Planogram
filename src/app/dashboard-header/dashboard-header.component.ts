@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  ActivatedRoute,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from '@angular/router';
+import { ProjectDetailsService } from '../services/project-details.service';
+import { Project } from '../interface/project';
 
 @Component({
   selector: 'app-dashboard-header',
@@ -8,7 +15,13 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './dashboard-header.component.css',
 })
 export class DashboardHeaderComponent {
-  constructor(private router: Router) {}
+  projectName: string = '';
+
+  constructor(
+    private router: Router,
+    private projectDetailsService: ProjectDetailsService,
+    private route: ActivatedRoute
+  ) {}
   planogram() {
     this.router.navigate(['/dashboard/planogram']);
   }
@@ -23,5 +36,17 @@ export class DashboardHeaderComponent {
   }
   compliance() {
     this.router.navigate(['/dashboard/compliance']);
+  }
+  projectDetails: Project[] = [];
+  ngOnInit(): void {
+    const selected = this.projectDetailsService.getSelectedProject();
+    this.projectName = selected ? selected.name : 'No project selected';
+  }
+  getProject() {
+    this.projectDetailsService
+      .getProjectDetails()
+      .subscribe((data: Project[]) => {
+        this.projectDetails = data;
+      });
   }
 }

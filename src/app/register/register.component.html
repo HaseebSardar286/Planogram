@@ -1,6 +1,6 @@
 <div class="top-container">
   <div class="container">
-    <form #registerForm="ngForm" (ngSubmit)="addDetails(registerForm.value)">
+    <form #registerForm="ngForm" (ngSubmit)="registerUser()">
       <h2>Create an Account</h2>
       <p>Sign up to get started</p>
       <div class="label-input">
@@ -10,7 +10,7 @@
           type="text"
           name="name"
           placeholder="Enter your full name"
-          ngModel
+          [(ngModel)]="userRegisterDetails.name"
         />
       </div>
 
@@ -21,7 +21,7 @@
           type="email"
           name="email"
           placeholder="Enter your email"
-          ngModel
+          [(ngModel)]="userRegisterDetails.email"
         />
       </div>
 
@@ -32,7 +32,7 @@
           type="password"
           name="password"
           placeholder="Enter your password"
-          ngModel
+          [(ngModel)]="userRegisterDetails.password"
         />
       </div>
 
@@ -43,14 +43,12 @@
           type="password"
           name="confirmPassword"
           placeholder="Re-enter your password"
-          ngModel
+          [(ngModel)]="userRegisterDetails.confirmPassword"
         />
       </div>
 
       <div style="display: flex; flex-direction: column">
-        <button class="registerButton">
-          <a routerLink="/login">Register</a>
-        </button>
+        <button class="registerButton">Register</button>
         <span class="login"
           >Already have an account? <a routerLink="/login">Log in here</a></span
         >

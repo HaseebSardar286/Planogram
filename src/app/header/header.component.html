@@ -15,7 +15,11 @@
         >
       </li>
       <hr />
-      <li><a class="dropdown-item logout" routerLink="/login">Logout</a></li>
+      <li>
+        <a class="dropdown-item logout" (click)="_authService.logoutUser()"
+          >Logout</a
+        >
+      </li>
     </ul>
   </div>
 </div>
